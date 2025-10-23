@@ -1,4 +1,4 @@
-# RobotOrderingSystem
+Contents of this documentation
 Automated process to order various drinks from a cobot.
 
 The RobotOrderingSystem is a process automation for detecting empty glasses and initiating automated drink preparation. It connects multiple components, including 3D-printed load-cell scales and cases, two ESP32 microcontroller, a robot arm, and a process engine (CPEE) to enable seamless interaction between hardware and software in an event-driven workflow.
@@ -8,3 +8,11 @@ When an empty glass is placed on one of the scales, the ESP32 measures its weigh
 To integrate user feedback, the system also includes a simple voting interface with two physical buttons: a green button for “good” and a red button for “bad.” This allows users to rate each prepared drink, providing valuable input for continuous improvement of recipes and system performance.
 
 The RobotOrderingSystem was created by Aron Lausch as part of the practical course “Sustainable Process Automation” at the Technical University of Munich (TUM). The goal of this project is to document the development process, showcase the integration of IoT and process automation technologies and provide guidance for replicating and extending the system.
+
+# Demo Video
+The following video shows the full process: XXX
+
+The ordering systems looks like the following: XXX
+
+# Contents of this documentation
++ [Demo Video](#Demo-Video)
