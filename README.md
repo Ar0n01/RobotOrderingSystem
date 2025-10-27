@@ -16,7 +16,7 @@ The ordering systems looks like the following: XXX
 
 # Contents of this documentation
 + [Demo Video](#demo-video)
-+ Architecture and Components
++ [Architecture and Components](#architecture)
   + [Overview](#overview)
   + [Hardware](#hardware)
   + [Software](#software)
@@ -27,9 +27,9 @@ The ordering systems looks like the following: XXX
 + [First setup](#firstsetup)
 + [Contact](#contact)
 
-
-# Hardware
-## 3D printed parts 
+# Architecture
+## Hardware components
+### 3D printed parts 
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum - Scales" src="https://github.com/user-attachments/assets/55b6aa09-0681-4281-86b2-f7c20ab4bc80" />
 
 + **Scale-case:** Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply.
@@ -39,13 +39,13 @@ The ordering systems looks like the following: XXX
 + **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like.
 + **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. 
 
-# Robot
+### Robot
 The cobot arm in the university lab is already set up. It has three pre-programmed moves that you can start using specific endpoints.
 
-# Software
-## CPE
+## Software
+### CPE
 The CPEE is a process engine that coordinates the process and steers all components of the ordering system via HTTP. Read more about the CPEE [here](https://cpee.org/). This specific CPEE process is available [here](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/135/).
 
-## weigtpublish-service
+### weigtpublish-service
 The weightpublish-service publishes the weight data of the scales via MQTT to the respective topics. Each scale has its own topic. The data is sent periodically, but rather on change.  
 
