@@ -32,12 +32,12 @@ The ordering systems looks like the following: XXX
 ## 3D printed parts 
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum - Scales" src="https://github.com/user-attachments/assets/55b6aa09-0681-4281-86b2-f7c20ab4bc80" />
 
-+ Scale-case: Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply.
++ **Scale-case:** Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply.
   
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum" src="https://github.com/user-attachments/assets/fda7844c-9e85-47a5-a454-cce1ae86825e" />
 
-+ Button-case: Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like.
-+ ESP32-case: Case used to cover the ESP32 and power supply on the side of the ordering system. 
++ **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like.
++ **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. 
 
 
 
