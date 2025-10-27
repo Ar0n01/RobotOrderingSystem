@@ -16,7 +16,7 @@ The ordering systems looks like the following: XXX
 
 # Contents of this documentation
 + [Demo Video](#demo-video)
-+ [Architecture and Components](#architecture)
++ Architecture and Components
   + [Overview](#overview)
   + [Hardware](#hardware)
   + [Software](#software)
