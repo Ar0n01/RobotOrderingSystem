@@ -15,10 +15,17 @@ The following video shows the full process: XXX
 The ordering systems looks like the following: XXX
 
 # Contents of this documentation
-+ [Demo Video](#Demo-Video)
-+ [Architecture and Components](#)
-  + [Overview](#)
-  + [Hardware](#)
-  + [Software](#)
++ [Demo Video](#demo-video)
++ [Architecture and Components](#architecture)
+  + [Overview](#overview)
+  + [Hardware](#hardware)
+  + [Software](#software)
++ [Process](#process)
+  + [Step 1](#step1)
+  + [Step 2](#step2)
+  + [Step 3](#step3)
++ [First setup](#firstsetup)
++ [Contact](#contact)
+
 
 
