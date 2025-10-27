@@ -30,6 +30,8 @@ The ordering systems looks like the following: XXX
 
 # Hardware
 ## 3D printed parts
+<img width="807" height="442" alt="image" src="https://github.com/user-attachments/assets/a913fa81-0bf7-49c9-b913-862218a6c6e4" />
+
 
 
 
