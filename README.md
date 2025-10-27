@@ -46,5 +46,6 @@ The cobot arm in the university lab is already set up. It has three pre-programm
 ## CPE
 The CPEE is a process engine that coordinates the process and steers all components of the ordering system via HTTP. Read more about the CPEE [here](https://cpee.org/). This specific CPEE process is available [here](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/135/).
 
-
+## weigtpublish-service
+The weightpublish-service publishes the weight data of the scales via MQTT to the respective topics. Each scale has its own topic. The data is sent periodically, but rather on change.  
 
