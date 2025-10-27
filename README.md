@@ -39,7 +39,12 @@ The ordering systems looks like the following: XXX
 + **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like.
 + **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. 
 
+# Robot
+The cobot arm in the university lab is already set up. It has three pre-programmed moves that you can start using specific endpoints.
 
+# Software
+## CPE
+The CPEE is a process engine that coordinates the process and steers all components of the ordering system via HTTP. Read more about the CPEE [here](https://cpee.org/). This specific CPEE process is available [here](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/135/).
 
 
 
