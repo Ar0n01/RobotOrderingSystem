@@ -53,6 +53,9 @@ The weightpublish-service publishes the weight data of the scales via MQTT to th
 ### votepublish-service
 The votepublish-service publishes the button data of the scales via MQTT to one topic. Each button publishes its id, when the respective button is pressed.
 
+### Dashboard 
+The dashboard simply displays the ratings of each cocktail. 
+
 # Process
 There are two main CPE processes: one for the ordering system and one for the vote system. 
 The ordering system process looks like the following. 
