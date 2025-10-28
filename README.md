@@ -57,5 +57,15 @@ The votepublish-service publishes the button data of the scales via MQTT to one 
 There are two main CPE processes: one for the ordering system and one for the vote system. 
 The ordering system process looks like the following. 
 <img width="2880" height="3304" alt="Process_CPE_OrderingSystem" src="https://github.com/user-attachments/assets/5451b735-b528-4b67-91d1-86c0e1164e61" />
+## Step 1
+Before starting the process the robot needs to be in the starting position and the gripper needs to be activated the first time. Also, the queue needs to be initialized. 
+
+## Step 2
+Now a parallel process is started with four processes, which all wait for (weight) data to arrive. If data is send to one of the subscribed topics, then that process is started, which means that the number of the scale is put into the queue. 
+
+## Step 3
+This process step starts with an XOR which checks if "1","2","3" or "4" is the first value in the queue. If one of the conditions is true, the respective subprocess is started. Afterward the processing, the order is dequeued from the queue.
+
+This process described above continues forever.
 
 
