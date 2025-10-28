@@ -96,6 +96,9 @@ The extension of the project will be explained in the later section.
 
 ## Vote process
 You can find the vote process [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
+<img width="2880" height="1556" alt="ButtonProcessCPE" src="https://github.com/user-attachments/assets/a67a3112-fcad-4215-a603-c197fc081eb7" />
+This process subscribes to the MQTT topic of the buttons. Therefore, whenever a button is pushed, the ID of the button is send here. 
+In the event of new data, the array is altered (+1 added) at the index of the sent value - 1.
 
 ## First setup
 The software is split up into three main components:
