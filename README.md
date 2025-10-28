@@ -29,6 +29,7 @@ The ordering systems looks like the following: XXX
 
 # Architecture
 ## Hardware components
+### Scale
 ### 3D printed parts 
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum - Scales" src="https://github.com/user-attachments/assets/55b6aa09-0681-4281-86b2-f7c20ab4bc80" />
 
@@ -52,5 +53,9 @@ The weightpublish-service publishes the weight data of the scales via MQTT to th
 ### votepublish-service
 The votepublish-service publishes the button data of the scales via MQTT to one topic. Each button publishes its id, when the respective button is pressed.
 
+# Process
+There are two main CPE processes: one for the ordering system and one for the vote system. 
+The ordering system process looks like the following. 
+<img width="2880" height="3304" alt="Process_CPE_OrderingSystem" src="https://github.com/user-attachments/assets/5451b735-b528-4b67-91d1-86c0e1164e61" />
 
 
