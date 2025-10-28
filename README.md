@@ -32,8 +32,16 @@ The ordering and vote system looks like the following.
 
 # Architecture
 ## Hardware components
+### ESP32
+<img width="384" height="319" alt="image" src="https://github.com/user-attachments/assets/62f8b965-19be-489e-82a8-e9de8d9c4530" />
+
+### Load cell
+<img width="401" height="247" alt="image" src="https://github.com/user-attachments/assets/f2050803-94d8-42f2-b9af-dc2f94b3b9b3" />
+
 ### Scale
-### 3D printed parts 
+<img width="538" height="616" alt="casing" src="https://github.com/user-attachments/assets/acaecca2-5b93-4ea7-aa52-632666626a33" />
+
+### Cases
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum - Scales" src="https://github.com/user-attachments/assets/55b6aa09-0681-4281-86b2-f7c20ab4bc80" />
 
 + **Scale-case:** Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply.
