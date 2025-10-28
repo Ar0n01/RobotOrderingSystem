@@ -31,6 +31,7 @@ The ordering and vote system looks like the following.
 
 ## Overview
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum" src="https://github.com/user-attachments/assets/041ff811-5008-4d0c-ac70-01a5a351af11" />
+
 The setup consists of two ESP-32, which publish data to the MQTT-Broker. One ESP-32 is connected to scales, which measure the current weight of the load cells. The second ESP-32 is conntecd to eight buttons, which publish their ID's via MQTT when pressed. The CPEE is subscribed to the topics and manages the process workflow. The CPEE also posts data to the .json file for the dashboard. 
 
 
