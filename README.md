@@ -87,6 +87,6 @@ Future projects could implement the actual making of the cocktail and alter the 
 The extension of the project will be explained in the later section.
 
 ## Vote process
-
+You can find the vote process [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
 
 
