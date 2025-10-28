@@ -62,7 +62,7 @@ The dashboard simply displays the ratings of each cocktail (left to right).
 
 
 # Process
-There are two main CPE processes: one for the ordering system and one for the vote system. 
+There are two main CPE processes: one for the ordering system and one for the vote system. Each one will be explained in more detail in the following.
 
 ## Ordering system process
 The ordering system process looks like the following. It can be found [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/1031/)
