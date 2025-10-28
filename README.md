@@ -66,6 +66,7 @@ There are two main CPE processes: one for the ordering system and one for the vo
 The ordering system process looks like the following. It can be found [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/1031/)
 
 <img width="720" height="540" alt="OrderingCPE" src="https://github.com/user-attachments/assets/efbd442e-aad5-4aad-b490-e44a95ced652" />
+
 ## Step 1
 Before starting the process the robot needs to be in the starting position and the gripper needs to be activated the first time. Also, the queue needs to be initialized. 
 
