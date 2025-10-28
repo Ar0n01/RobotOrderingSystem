@@ -27,6 +27,10 @@ The ordering and vote system looks like the following.
 <img width="4032" height="3024" alt="OrderingSystemOverview" src="https://github.com/user-attachments/assets/dbc34cfa-2013-4fdc-99ae-fb34ae6958ed" />
 
 # Architecture
+
+## Overview
+
+
 ## Hardware components
 ### ESP32
 <img width="384" height="319" alt="image" src="https://github.com/user-attachments/assets/62f8b965-19be-489e-82a8-e9de8d9c4530" />
