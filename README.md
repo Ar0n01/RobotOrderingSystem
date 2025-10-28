@@ -10,7 +10,8 @@ To integrate user feedback, the system also includes a simple voting interface w
 The RobotOrderingSystem was created by Aron Lausch as part of the practical course “Sustainable Process Automation” at the Technical University of Munich (TUM). The goal of this project is to document the development process, showcase the integration of IoT and process automation technologies and provide guidance for replicating and extending the system.
 
 # Demo Video
-The following video shows the full process: XXX
+The following video shows the full process: 
+
 
 The ordering systems looks like the following: XXX
 
@@ -60,11 +61,11 @@ The dashboard simply displays the ratings of each cocktail (left to right).
 
 # Process
 There are two main CPE processes: one for the ordering system and one for the vote system. 
-The ordering system process looks like the following. 
-<img width="720" height="540" alt="OrderingCPE" src="https://github.com/user-attachments/assets/efbd442e-aad5-4aad-b490-e44a95ced652" />
-
 
 ## Ordering System Process
+The ordering system process looks like the following. It can be found [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/1031/)
+
+<img width="720" height="540" alt="OrderingCPE" src="https://github.com/user-attachments/assets/efbd442e-aad5-4aad-b490-e44a95ced652" />
 ## Step 1
 Before starting the process the robot needs to be in the starting position and the gripper needs to be activated the first time. Also, the queue needs to be initialized. 
 
