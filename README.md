@@ -89,4 +89,42 @@ The extension of the project will be explained in the later section.
 ## Vote process
 You can find the vote process [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
 
+## First setup
+The software is split up into three main components:
+(1) publishweight service
+(2) publishvote service
+(3) dashboard
 
+The publishweight service and publishvote service run on the respective ESPs-32. 
+
+### Scale setup
+The code for the ESP-32 (scales) is in the `publishweight-service` subdirectory. The file is named "publishweight". 
+
+The simplest way to get the code compiling and running is to use PlatformIO which can be installed as a VS Code Extension.
+
+When PlatformIO is installed just open the command palette (`Ctrl + Shift + P` when using the standard VS Code keyboard shortcuts) and run the "Upload" or "Upload and Monitor" PlatformIO task.
+This automatically compiles the code and uploads it to the connected ESP-32.
+
+In the `publishweight-service` folder, there are two code files, `calibratescale.cpp` and `publishweight.cpp`.
+To decide which of the files to compile and upload to the ESP change the `build_src_filter` property in the `platformio.ini` file within the root folder.
+
+First, each load cell has to be calibrated, for this, the calibration value has to be found empirically. This can be done by selecting the `calibratescale.cpp` in the `platformio.ini` file and then using the "Upload and Monitor" task to run the calibration program. When following the program either note the calibration factor down or save it to EEPROM.
+
+Before the weight cell can be deployed using the `publishweight.cpp` file, a couple of things have to be adapted in it.
+If you manually noted down the factor, set `useEEPROM` to `false` and update the `calibrationValue` variable accordingly. If you saved it to EEPROM just set the `useEEPROM` to `true`.
+
+To connect to the WiFi, set the WiFi's `ssid` and `password` to the corresponding variables.
+Lastly, to allow communication with the MQTT Broker you have to set the port (`port` variable) and IP Address (`server` variable) of the Mosquitto MQTT Broker. 
+
+### Button setup
+The code for the ESP-32 (buttons) is in the `publisvotes-service` subdirectory. The file is named "publishvotes". 
+This service reads up to 8 buttons on an ESP32 and publishes the pressed button ID via MQTT to a topic. Connect your buttons to the GPIO pins you want (one side to the GPIO, the other to GND). I'll provide an example as a picture below.
+
+(1) In the code, configure the button_pins to match your wiring order, e.g. const int button_pins[8] = {13, 32, 33, 25, 26, 27, 14, 12}
+The order in this array defines which button sends which ID (1–8). 
+
+(2) Enter your Wi-Fi and MQTT broker details in the top section.
+
+(3) Upload the code to your ESP32.
+
+(4) When you press a button, its ID (1–8) is sent to the MQTT topic. In this example to al/votes
