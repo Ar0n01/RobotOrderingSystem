@@ -55,11 +55,14 @@ The votepublish-service publishes the button data of the scales via MQTT to one 
 
 ### Dashboard 
 The dashboard simply displays the ratings of each cocktail (left to right).
+<img width="2880" height="1636" alt="Dashboard_Cocktail_Ratings" src="https://github.com/user-attachments/assets/b25d1438-ac18-4798-ab72-8592bc7d4842" />
+
 
 # Process
 There are two main CPE processes: one for the ordering system and one for the vote system. 
 The ordering system process looks like the following. 
 <img width="2880" height="3304" alt="Process_CPE_OrderingSystem" src="https://github.com/user-attachments/assets/5451b735-b528-4b67-91d1-86c0e1164e61" />
+## Ordering System Process
 ## Step 1
 Before starting the process the robot needs to be in the starting position and the gripper needs to be activated the first time. Also, the queue needs to be initialized. 
 
@@ -69,6 +72,12 @@ Now a parallel process is started with four processes, which all wait for (weigh
 ## Step 3
 This process step starts with an XOR which checks if "1","2","3" or "4" is the first value in the queue. If one of the conditions is true, the respective subprocess is started. Afterward the processing, the order is dequeued from the queue.
 
-This process described above continues forever.
+## Example subprocess 1
+You can find the subprocess 1 [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
+For each order place (scale) there is a subprocess, which is called in the main process. In that subprocess the offset value (for subprocess 1 its 0, for subprocess 2 its 1 etc.) is set via the "drink_ordered" endpoint. 
+THe robot programm is then called via the "accept_order" endpoint, which executes the actual robot program.
+Afterwards a placeholder robot programm is called via the cocktail_1 endpoint.
+Future projects could implement the actual making of the cocktail and alter the existing cocktail robot program. 
+The extension of the project will be explained in the later section.
 
 
