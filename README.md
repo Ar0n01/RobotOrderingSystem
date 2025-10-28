@@ -96,6 +96,10 @@ The robot programm is then called via the "accept_order" endpoint, which execute
 Afterwards a placeholder robot programm is called via the cocktail_1 endpoint.
 Future projects could implement the actual making of the cocktail and alter the existing cocktail robot program. 
 The extension of the project will be explained in the later section.
+The other subprocesses can be found here: 
++ [Subprocess 2](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/857/)
++ [Subprocess 3](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/808/)
++ [Subprocess 4](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/858/)
 
 ## Vote process
 You can find the vote process [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
