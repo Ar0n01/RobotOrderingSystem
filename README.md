@@ -156,3 +156,8 @@ The order in this array defines which button sends which ID (1–8).
 
 # Credits
 Scale calibration, scale wiring and scale stl acquired from [here.](https://github.com/DominikVoigt/esp32-weightsensor)
+
+# Contact
+This project was a lot of fun and I learned many things as it was my first development project involving so many hardware components.
+
+If you have any questions or inquiries regarding this project, feel free to contact me via e-mail (aron.lausch@tum.de).
