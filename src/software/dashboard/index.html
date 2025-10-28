@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cocktail Ratings</title>
+  <style>
+    :root {
+      --bg: #0f1216;
+      --card: #161a20;
+      --text: #e8edf2;
+      --muted: #9aa7b5;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .wrap {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 24px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,.3);
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .ratings {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      font-size: 18px;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .rating span.number {
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🍸 Cocktail Ratings</h1>
+    <div class="grid">
+      <article class="card">
+        <span class="title">Cosmopolitan</span>
+        <div class="ratings">
+          <div class="rating">👍 <span class="number" id="up1">12</span></div>
+          <div class="rating">👎 <span class="number" id="down1">3</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="title">Old Fashioned</span>
+        <div class="ratings">
+          <div class="rating">👍 <span class="number" id="up2">8</span></div>
+          <div class="rating">👎 <span class="number" id="down2">1</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="title">Mojito</span>
+        <div class="ratings">
+          <div class="rating">👍 <span class="number" id="up3">5</span></div>
+          <div class="rating">👎 <span class="number" id="down3">2</span></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="title">Margarita</span>
+        <div class="ratings">
+          <div class="rating">👍 <span class="number" id="up4">16</span></div>
+          <div class="rating">👎 <span class="number" id="down4">4</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+</html>
