@@ -1,6 +1,6 @@
-The RobotOrderingSystem is a process automation for detecting empty glasses and initiating automated drink preparation. It connects multiple components, including 3D-printed load-cell scales and cases, two ESP32 microcontroller, a robot arm, and a process engine (CPEE) to enable seamless interaction between hardware and software in an event-driven workflow.
+The RobotOrderingSystem is a process automation for detecting empty glasses and initiating automated drink preparation. It connects multiple components, including 3D-printed load-cell scales and cases, two ESP-32 microcontrollers, a robot arm, and a process engine (CPEE) to enable seamless interaction between hardware and software in an event-driven workflow.
 
-When an empty glass is placed on one of the scales, the ESP32 measures its weight and publishes the data via MQTT. The CPEE process engine is subscribed to the respective MQTT topic and reacts to these messages by triggering the robot arm, which picks up the detected glass and places it in a designated location where another program can continue the workflow (e.g., filling or mixing the drink).
+When an empty glass is placed on one of the scales, the ESP-32 measures its weight and publishes the data via MQTT. The CPEE process engine is subscribed to the respective MQTT topic and reacts to these messages by triggering the robot arm, which picks up the detected glass and places it in a designated location where another program can continue the workflow (e.g., filling or mixing the drink).
 
 To integrate user feedback, the system also includes a simple voting interface with two physical buttons: a green button for “good” and a red button for “bad.” This allows users to rate each prepared drink, providing valuable input for continuous improvement of recipes and system performance.
 
@@ -31,7 +31,7 @@ The ordering and vote system looks like the following.
 ## Overview
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum" src="https://github.com/user-attachments/assets/041ff811-5008-4d0c-ac70-01a5a351af11" />
 
-The setup consists of two ESP-32, which publish data to the MQTT-Broker. One ESP-32 is connected to scales, which measure the current weight of the load cells. The second ESP-32 is conntecd to eight buttons, which publish their ID's via MQTT when pressed. The CPEE is subscribed to the topics and manages the process workflow. The CPEE also posts data to the .json file for the dashboard. 
+The setup consists of two ESP-32, which publish data to the MQTT-Broker. One ESP-32 is connected to scales, which measure the current weight of the load cells. The second ESP-32 is connected to eight buttons, which publish their ID's via MQTT when pressed. The CPEE is subscribed to the topics and manages the process workflow. The CPEE also posts data to the .json file for the dashboard. 
 
 
 ## Hardware components
@@ -55,7 +55,7 @@ You can find the stl files in the `stl-files` subdirectory to 3d print the compo
 
 + **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
 
-+ **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
++ **ESP-32-case:** Case used to cover the ESP-32 and power supply on the side of the ordering system. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
 
 ### Robot
 The cobot arm in the university lab is already set up. It has three pre-programmed moves that you can start using specific endpoints.
@@ -65,7 +65,7 @@ The cobot arm in the university lab is already set up. It has three pre-programm
 The CPEE is a process engine that coordinates the process and steers all components of the ordering system via HTTP. Read more about the CPEE [here](https://cpee.org/). This specific CPEE process is available [here](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/135/).
 
 ### Weightpublish service
-The weightpublish service publishes the weight data of the scales via MQTT to the respective topics. Each scale has its own topic. The data is not send periodically, but rather when it changes above and below a certain treshold (70g).  
+The weightpublish service publishes the weight data of the scales via MQTT to the respective topics. Each scale has its own topic. The data is not sent periodically, but rather when it changes above and below a certain threshold (70g).  
 
 ### Votepublish service
 The votepublish service publishes the button data of the scales via MQTT to one topic. Each button publishes its id, when the respective button is pressed. The total amount of votes is stored and updated in the cpee.
@@ -75,7 +75,7 @@ The dashboard simply displays the ratings of each cocktail (left to right).
 <img width="2880" height="1636" alt="Dashboard_Cocktail_Ratings" src="https://github.com/user-attachments/assets/b25d1438-ac18-4798-ab72-8592bc7d4842" />
 
 # Process
-There are two main CPE processes: one for the ordering system and one for the vote system. Each one will be explained in more detail in the following.
+There are two main CPEE processes: one for the ordering system and one for the vote system. Each one will be explained in more detail in the following.
 
 ## Ordering system process
 The ordering system process looks like the following. It can be found [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/1031/)
@@ -94,8 +94,8 @@ Now a parallel process is started with four processes, which all wait for (weigh
 ### Example subprocess 1
 You can find the subprocess 1 [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
 For each order place (scale) there is a subprocess, which is called in the main process. In that subprocess the offset value (for subprocess 1 its 0, for subprocess 2 its 1 etc.) is set via the "drink_ordered" endpoint. 
-The robot programm is then called via the "accept_order" endpoint, which executes the actual robot program.
-Afterwards a placeholder robot programm is called via the cocktail_1 endpoint.
+The robot program is then called via the "accept_order" endpoint, which executes the actual robot program.
+Afterwards a placeholder robot program is called via the cocktail_1 endpoint.
 Future projects could implement the actual making of the cocktail and alter the existing cocktail robot program. 
 The extension of the project will be explained in the later section.
 The other subprocesses can be found here: 
@@ -147,15 +147,15 @@ To connect to the WiFi, set the WiFi's `ssid` and `password` to the correspondin
 Lastly, to allow communication with the MQTT Broker you have to set the port (`port` variable) and IP Address (`server` variable) of the Mosquitto MQTT Broker. 
 
 ## Button setup
-The code for the ESP-32 (buttons) is in the `publisvotes-service` subdirectory. The file is named "publishvotes". 
-This service reads up to 8 buttons on an ESP32 and publishes the pressed button ID via MQTT to a topic. Connect your buttons to the GPIO pins you want (one side to the GPIO, the other to GND). I'll provide an example as a picture below.
+The code for the ESP-32 (buttons) is in the `publishvotes-service` subdirectory. The file is named "publishvotes". 
+This service reads up to 8 buttons on an ESP-32 and publishes the pressed button ID via MQTT to a topic. Connect your buttons to the GPIO pins you want (one side to the GPIO, the other to GND). I'll provide an example as a picture below.
 
 + (1) In the code, configure the button_pins to match your wiring order, e.g. const int button_pins[8] = {13, 32, 33, 25, 26, 27, 14, 12}
 The order in this array defines which button sends which ID (1–8). 
 
 + (2) Enter your Wi-Fi and MQTT broker details in the top section.
 
-+ (3) Upload the code to your ESP32.
++ (3) Upload the code to your ESP-32.
 
 + (4) When you press a button, its ID (1–8) is sent to the MQTT topic. In this example to al/votes
 
