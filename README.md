@@ -43,16 +43,19 @@ The setup consists of two ESP-32, which publish data to the MQTT-Broker. One ESP
 
 ### 3D printed scale
 <img width="538" height="616" alt="casing" src="https://github.com/user-attachments/assets/acaecca2-5b93-4ea7-aa52-632666626a33" />
+You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
 
 ### 3D printed cases
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum - Scales" src="https://github.com/user-attachments/assets/55b6aa09-0681-4281-86b2-f7c20ab4bc80" />
 
-+ **Scale-case:** Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply.
++ **Scale-case:** Scales are placed on top of the support inside the case. Underneath is room for the ESP-32, cables and electric supply. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
+
   
 <img width="720" height="405" alt="Architecture Overview Entwicklungspraktikum" src="https://github.com/user-attachments/assets/fda7844c-9e85-47a5-a454-cce1ae86825e" />
 
-+ **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like.
-+ **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. 
++ **Button-case:** Buttons can be put inside the holes. There are two different cases, one for the outer part and one for the middle parts. Therefore it's modular and can be extended as you like. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
+
++ **ESP32-case:** Case used to cover the ESP32 and power supply on the side of the ordering system. You can find the stl files in the `stl-files` subdirectory to 3d print the components yourself.
 
 ### Robot
 The cobot arm in the university lab is already set up. It has three pre-programmed moves that you can start using specific endpoints.
@@ -113,6 +116,8 @@ The software is split up into three main components:
 + (3) dashboard
 
 The publishweight service and publishvote service run on the respective ESPs-32. The first ESP-32 needs to be connected to the scales and the second one to the buttons. In the following I'll briefly show how to connect the ESP-32 with the hardware.
+
+For the dashboard: Simply host the index.html file and start the python script with "python3 cocktail.py" in your terminal.
 
 ### Wiring of scales with ESP-32
 <img width="985" height="514" alt="image" src="https://github.com/user-attachments/assets/69735c8e-7c27-49c4-b807-40f51cdca51a" />
