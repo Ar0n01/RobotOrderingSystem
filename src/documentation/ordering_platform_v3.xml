@@ -1,0 +1,545 @@
+<testset xmlns="http://cpee.org/ns/properties/2.0">
+  <executionhandler>ruby</executionhandler>
+  <dataelements>
+    <scalefour>0</scalefour>
+    <scalethree>0</scalethree>
+    <scaletwo>0</scaletwo>
+    <queue>[]</queue>
+    <scaleone>0</scaleone>
+  </dataelements>
+  <endpoints>
+    <timeout>https://cpee.org/services/timeout.php</timeout>
+    <subprocess>https://cpee.org/flow/start/url/</subprocess>
+    <mqtt>https-get://lab.bpm.in.tum.de/mqtt/read/values/</mqtt>
+    <starting_position>https://lab.bpm.in.tum.de/ur5/kanne/programs/AronLauschOrdering/starting_point.urp/wait</starting_position>
+  </endpoints>
+  <attributes>
+    <guarded>none</guarded>
+    <modeltype>CPEE</modeltype>
+    <theme>extended</theme>
+    <guarded_id/>
+    <info>ordering_platform_v3</info>
+    <creator>Christine Ashcreek</creator>
+    <author>Christine Ashcreek</author>
+    <model_uuid>16b0f1cb-1cc6-441d-8174-bdd0eae462a4</model_uuid>
+    <model_version/>
+    <design_dir>Teaching.dir/Prak.dir/TUM-Prak-25-SS.dir/AL.dir/</design_dir>
+    <design_stage>development</design_stage>
+  </attributes>
+  <description>
+    <description xmlns="http://cpee.org/ns/description/1.0">
+      <call id="a6" endpoint="starting_position">
+        <parameters>
+          <label>Move robot into starting position and activate gripper</label>
+          <method>:put</method>
+          <arguments/>
+        </parameters>
+        <annotations>
+          <_generic/>
+          <_timing>
+            <_timing_weight/>
+            <_timing_avg/>
+            <explanations/>
+          </_timing>
+          <_shifting>
+            <_shifting_type>Duration</_shifting_type>
+          </_shifting>
+          <_context_data_analysis>
+            <probes/>
+            <ips/>
+          </_context_data_analysis>
+          <report>
+            <url/>
+          </report>
+          <_notes>
+            <_notes_general/>
+          </_notes>
+        </annotations>
+        <documentation>
+          <input/>
+          <output/>
+          <implementation>
+            <description/>
+          </implementation>
+        </documentation>
+      </call>
+      <manipulate id="a16" label="Initialize queue">data.queue = Array.new</manipulate>
+      <parallel wait="-1" cancel="last">
+        <parallel_branch>
+          <loop mode="pre_test" condition="true">
+            <_probability>
+              <_probability_min/>
+              <_probability_max/>
+              <_probability_avg/>
+            </_probability>
+            <choose mode="exclusive" label="Check which order is first in the queue">
+              <alternative condition="data.queue.at(0) == &quot;4&quot;">
+                <manipulate id="a4" label="Delete order from the queue and reset weight data to 0">data.queue.shift
+data.scalefour = 0</manipulate>
+                <_probability>
+                  <_probability_min/>
+                  <_probability_max/>
+                  <_probability_avg/>
+                </_probability>
+                <call id="a14" endpoint="subprocess">
+                  <parameters>
+                    <label>Start subprocess for order 4</label>
+                    <color/>
+                    <method>:post</method>
+                    <arguments>
+                      <behavior>wait_running</behavior>
+                      <url>https://cpee.org/hub/server/Teaching.dir/Prak.dir/TUM-Prak-25-SS.dir/AL.dir/subprocess_4.xml</url>
+                      <init/>
+                      <endpoints/>
+                      <attributes/>
+                      <customization/>
+                    </arguments>
+                  </parameters>
+                  <code>
+                    <signal/>
+                    <prepare/>
+                    <finalize output="result"/>
+                    <update output="result"/>
+                    <rescue output="result"/>
+                  </code>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                    <code>
+                      <description/>
+                    </code>
+                  </documentation>
+                </call>
+                <manipulate id="a2" label="Short wait">sleep(2)</manipulate>
+              </alternative>
+              <alternative condition="data.queue.at(0) == &quot;3&quot;">
+                <manipulate id="a20" label="Delete order from the queue and reset weight data to 0">data.queue.shift
+data.scalethree = 0</manipulate>
+                <_probability>
+                  <_probability_min/>
+                  <_probability_max/>
+                  <_probability_avg/>
+                </_probability>
+                <call id="a13" endpoint="subprocess">
+                  <parameters>
+                    <label>Start subprocess for order 3</label>
+                    <color/>
+                    <method>:post</method>
+                    <arguments>
+                      <behavior>wait_running</behavior>
+                      <url>https://cpee.org/hub/server/Teaching.dir/Prak.dir/TUM-Prak-25-SS.dir/AL.dir/subprocess_3.xml</url>
+                      <init/>
+                      <endpoints/>
+                      <attributes/>
+                      <customization/>
+                    </arguments>
+                  </parameters>
+                  <code>
+                    <signal/>
+                    <prepare/>
+                    <finalize output="result"/>
+                    <update output="result"/>
+                    <rescue output="result"/>
+                  </code>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                    <code>
+                      <description/>
+                    </code>
+                  </documentation>
+                </call>
+                <manipulate id="a7" label="">sleep(2)</manipulate>
+              </alternative>
+              <alternative condition="data.queue.at(0) == &quot;2&quot;">
+                <manipulate id="a5" label="Delete order from the queue and reset weight data to 0">data.queue.shift
+data.scaletwo = 0</manipulate>
+                <_probability>
+                  <_probability_min/>
+                  <_probability_max/>
+                  <_probability_avg/>
+                </_probability>
+                <call id="a12" endpoint="subprocess">
+                  <parameters>
+                    <label>Start subprocess for order 2</label>
+                    <color/>
+                    <method>:post</method>
+                    <arguments>
+                      <behavior>wait_running</behavior>
+                      <url>https://cpee.org/hub/server/Teaching.dir/Prak.dir/TUM-Prak-25-SS.dir/AL.dir/subprocess_2.xml</url>
+                      <init/>
+                      <endpoints/>
+                      <attributes/>
+                      <customization/>
+                    </arguments>
+                  </parameters>
+                  <code>
+                    <signal/>
+                    <prepare/>
+                    <finalize output="result"/>
+                    <update output="result"/>
+                    <rescue output="result"/>
+                  </code>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                    <code>
+                      <description/>
+                    </code>
+                  </documentation>
+                </call>
+                <manipulate id="a9" label="Short sleep">sleep(2)</manipulate>
+              </alternative>
+              <alternative condition="data.queue[0] == &quot;1&quot;">
+                <manipulate id="a8" label="Delete order from the queue and reset weight data to 0">data.queue.shift
+data.scaleone = 0</manipulate>
+                <_probability>
+                  <_probability_min/>
+                  <_probability_max/>
+                  <_probability_avg/>
+                </_probability>
+                <call id="a11" endpoint="subprocess">
+                  <parameters>
+                    <label>Start subprocess for order 1</label>
+                    <color/>
+                    <method>:post</method>
+                    <arguments>
+                      <behavior>wait_running</behavior>
+                      <url>https://cpee.org/hub/server/Teaching.dir/Prak.dir/TUM-Prak-25-SS.dir/AL.dir/subprocess_1.xml</url>
+                      <init/>
+                      <endpoints/>
+                      <attributes/>
+                      <customization/>
+                    </arguments>
+                  </parameters>
+                  <code>
+                    <signal/>
+                    <prepare/>
+                    <finalize output="result"/>
+                    <update output="result"/>
+                    <rescue output="result"/>
+                  </code>
+                  <annotations>
+                    <_generic/>
+                    <_timing>
+                      <_timing_weight/>
+                      <_timing_avg/>
+                      <explanations/>
+                    </_timing>
+                    <_shifting>
+                      <_shifting_type>Duration</_shifting_type>
+                    </_shifting>
+                    <_context_data_analysis>
+                      <probes/>
+                      <ips/>
+                    </_context_data_analysis>
+                    <report>
+                      <url/>
+                    </report>
+                    <_notes>
+                      <_notes_general/>
+                    </_notes>
+                  </annotations>
+                  <documentation>
+                    <input/>
+                    <output/>
+                    <implementation>
+                      <description/>
+                    </implementation>
+                    <code>
+                      <description/>
+                    </code>
+                  </documentation>
+                </call>
+                <manipulate id="a10" label="Short sleep">sleep(2)</manipulate>
+              </alternative>
+              <otherwise/>
+            </choose>
+          </loop>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a1" endpoint="mqtt">
+            <parameters>
+              <label>Wait for new value for topic 1</label>
+              <color/>
+              <arguments>
+                <topic>al/weight/1</topic>
+                <wait>/stop</wait>
+              </arguments>
+            </parameters>
+            <code>
+              <signal/>
+              <prepare/>
+              <finalize output="result"/>
+              <update output="result">data.scaleone = result
+data.queue &lt;&lt; '1' if result.to_f &gt; 70</update>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a17" endpoint="mqtt">
+            <parameters>
+              <label>Wait for new value for topic 2</label>
+              <color/>
+              <arguments>
+                <topic>al/weight/2</topic>
+                <wait>/stop</wait>
+              </arguments>
+            </parameters>
+            <code>
+              <signal/>
+              <prepare/>
+              <finalize output="result"/>
+              <update output="result">data.scaletwo = result 
+data.queue &lt;&lt; '2' if result.to_f &gt; 70</update>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a18" endpoint="mqtt">
+            <parameters>
+              <label>Wait for new value for topic 3</label>
+              <color/>
+              <arguments>
+                <topic>al/weight/3</topic>
+                <wait>/stop</wait>
+              </arguments>
+            </parameters>
+            <code>
+              <signal/>
+              <prepare/>
+              <finalize output="result"/>
+              <update output="result">data.scalethree = result
+data.queue &lt;&lt; '3' if result.to_f &gt; 70</update>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+        </parallel_branch>
+        <parallel_branch>
+          <call id="a19" endpoint="mqtt">
+            <parameters>
+              <label>Wait for new value for topic 4</label>
+              <color/>
+              <arguments>
+                <topic>al/weight/4</topic>
+                <wait>/stop</wait>
+              </arguments>
+            </parameters>
+            <code>
+              <signal/>
+              <prepare/>
+              <finalize output="result"/>
+              <update output="result">data.scalefour = result
+data.queue &lt;&lt; '4' if result.to_f &gt; 70</update>
+              <rescue output="result"/>
+            </code>
+            <annotations>
+              <_generic/>
+              <_timing>
+                <_timing_weight/>
+                <_timing_avg/>
+                <explanations/>
+              </_timing>
+              <_shifting>
+                <_shifting_type>Duration</_shifting_type>
+              </_shifting>
+              <_context_data_analysis>
+                <probes/>
+                <ips/>
+              </_context_data_analysis>
+              <report>
+                <url/>
+              </report>
+              <_notes>
+                <_notes_general/>
+              </_notes>
+            </annotations>
+            <documentation>
+              <input/>
+              <output/>
+              <implementation>
+                <description/>
+              </implementation>
+              <code>
+                <description/>
+              </code>
+            </documentation>
+          </call>
+        </parallel_branch>
+      </parallel>
+      <stop id="a3"/>
+    </description>
+  </description>
+  <transformation>
+    <description type="copy"/>
+    <dataelements type="none"/>
+    <endpoints type="none"/>
+  </transformation>
+</testset>
