@@ -14,6 +14,7 @@ The following video shows the full process: [here](https://youtube.com/shorts/Zt
 
 
 The ordering and vote system looks like the following.
+<img width="4032" height="3024" alt="OrderingSystemOverview" src="https://github.com/user-attachments/assets/dbc34cfa-2013-4fdc-99ae-fb34ae6958ed" />
 
 
 # Contents of this documentation
