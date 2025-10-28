@@ -79,7 +79,7 @@ Now a parallel process is started with four processes, which all wait for (weigh
 ## Example subprocess 1
 You can find the subprocess 1 [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
 For each order place (scale) there is a subprocess, which is called in the main process. In that subprocess the offset value (for subprocess 1 its 0, for subprocess 2 its 1 etc.) is set via the "drink_ordered" endpoint. 
-THe robot programm is then called via the "accept_order" endpoint, which executes the actual robot program.
+The robot programm is then called via the "accept_order" endpoint, which executes the actual robot program.
 Afterwards a placeholder robot programm is called via the cocktail_1 endpoint.
 Future projects could implement the actual making of the cocktail and alter the existing cocktail robot program. 
 The extension of the project will be explained in the later section.
