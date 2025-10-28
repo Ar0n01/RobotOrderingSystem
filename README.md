@@ -63,7 +63,7 @@ The dashboard simply displays the ratings of each cocktail (left to right).
 # Process
 There are two main CPE processes: one for the ordering system and one for the vote system. 
 
-## Ordering System Process
+## Ordering system process
 The ordering system process looks like the following. It can be found [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/1031/)
 
 <img width="720" height="540" alt="OrderingCPE" src="https://github.com/user-attachments/assets/efbd442e-aad5-4aad-b490-e44a95ced652" />
@@ -84,5 +84,8 @@ The robot programm is then called via the "accept_order" endpoint, which execute
 Afterwards a placeholder robot programm is called via the cocktail_1 endpoint.
 Future projects could implement the actual making of the cocktail and alter the existing cocktail robot program. 
 The extension of the project will be explained in the later section.
+
+## Vote process
+
 
 
