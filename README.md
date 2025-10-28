@@ -13,7 +13,8 @@ The RobotOrderingSystem was created by Aron Lausch as part of the practical cour
 The following video shows the full process: [here](https://youtube.com/shorts/Zt_JufU5usw?feature=share)
 
 
-The ordering systems looks like the following: XXX
+The ordering and vote system looks like the following.
+
 
 # Contents of this documentation
 + [Demo Video](#demo-video)
