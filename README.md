@@ -82,16 +82,16 @@ The ordering system process looks like the following. It can be found [here.](ht
 
 <img width="720" height="540" alt="OrderingCPE" src="https://github.com/user-attachments/assets/efbd442e-aad5-4aad-b490-e44a95ced652" />
 
-## Step 1
+### Step 1
 Before starting the process the robot needs to be in the starting position and the gripper needs to be activated the first time. Also, the queue needs to be initialized. 
 
-## Step 2
+### Step 2
 This process step starts with an XOR which checks if "1","2","3" or "4" is the first value in the queue. If one of the conditions is true, the respective subprocess is started. After processing, the order is dequeued from the queue. The process step 2 is parallel to process step 3.
 
-## Step 3
+### Step 3
 Now a parallel process is started with four processes, which all wait for (weight) data to arrive. If data is send to one of the subscribed topics, the respective values get updated. If the new value is above 70g, then the order is put into the queue.
 
-## Example subprocess 1
+### Example subprocess 1
 You can find the subprocess 1 [here.](https://cpee.org/flow/edit.html?monitor=https://cpee.org/flow/engine/421/)
 For each order place (scale) there is a subprocess, which is called in the main process. In that subprocess the offset value (for subprocess 1 its 0, for subprocess 2 its 1 etc.) is set via the "drink_ordered" endpoint. 
 The robot programm is then called via the "accept_order" endpoint, which executes the actual robot program.
@@ -109,7 +109,7 @@ You can find the vote process [here.](https://cpee.org/flow/edit.html?monitor=ht
 This process subscribes to the MQTT topic of the buttons. Therefore, whenever a button is pushed, the ID of the button is send here. 
 In the event of new data, the array is altered (+1 added) at the index of the sent value - 1.
 
-## First setup
+# First setup
 The software is split up into three main components:
 + (1) publishweight service
 + (2) publishvote service
@@ -119,15 +119,15 @@ The publishweight service and publishvote service run on the respective ESPs-32.
 
 For the dashboard: Simply host the index.html file and start the python script with "python3 cocktail.py" in your terminal.
 
-### Wiring of scales with ESP-32
+## Wiring of scales with ESP-32
 <img width="985" height="514" alt="image" src="https://github.com/user-attachments/assets/69735c8e-7c27-49c4-b807-40f51cdca51a" />
 
 
-### Wiring of buttons with ESP-32
+## Wiring of buttons with ESP-32
 The wiring of the buttons is pretty straight forward. First you connect one row with the gnd pin. For one button you always connect one cable with a normal pin (12,13, etc) and then one cable with the gnd pin (row). 
 <img width="3024" height="4032" alt="Wiring_buttons (1)" src="https://github.com/user-attachments/assets/b3cbbbf3-7570-4940-afda-0ae841ecc044" />
 
-### Scale setup
+## Scale setup
 The code for the ESP-32 (scales) is in the `publishweight-service` subdirectory. The file is named "publishweight". 
 
 The simplest way to get the code compiling and running is to use PlatformIO which can be installed as a VS Code Extension.
@@ -146,7 +146,7 @@ If you manually noted down the factor, set `useEEPROM` to `false` and update the
 To connect to the WiFi, set the WiFi's `ssid` and `password` to the corresponding variables.
 Lastly, to allow communication with the MQTT Broker you have to set the port (`port` variable) and IP Address (`server` variable) of the Mosquitto MQTT Broker. 
 
-### Button setup
+## Button setup
 The code for the ESP-32 (buttons) is in the `publisvotes-service` subdirectory. The file is named "publishvotes". 
 This service reads up to 8 buttons on an ESP32 and publishes the pressed button ID via MQTT to a topic. Connect your buttons to the GPIO pins you want (one side to the GPIO, the other to GND). I'll provide an example as a picture below.
 
