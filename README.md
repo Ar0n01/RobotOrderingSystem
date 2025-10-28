@@ -6,14 +6,6 @@ To integrate user feedback, the system also includes a simple voting interface w
 
 The RobotOrderingSystem was created by Aron Lausch as part of the practical course “Sustainable Process Automation” at the Technical University of Munich (TUM). The goal of this project is to document the development process, showcase the integration of IoT and process automation technologies and provide guidance for replicating and extending the system.
 
-# Demo Video
-The following video shows the full process: [here](https://youtube.com/shorts/Zt_JufU5usw?feature=share)
-
-
-The ordering and vote system looks like the following.
-<img width="4032" height="3024" alt="OrderingSystemOverview" src="https://github.com/user-attachments/assets/dbc34cfa-2013-4fdc-99ae-fb34ae6958ed" />
-
-
 # Contents of this documentation
 + [Demo Video](#demo-video)
 + [Architecture and Components](#architecture)
@@ -26,6 +18,13 @@ The ordering and vote system looks like the following.
   + [Step 3](#step3)
 + [First setup](#firstsetup)
 + [Contact](#contact)
+
+# Demo Video
+The following video shows the full process: [here](https://youtube.com/shorts/Zt_JufU5usw?feature=share)
+
+
+The ordering and vote system looks like the following.
+<img width="4032" height="3024" alt="OrderingSystemOverview" src="https://github.com/user-attachments/assets/dbc34cfa-2013-4fdc-99ae-fb34ae6958ed" />
 
 # Architecture
 ## Hardware components
