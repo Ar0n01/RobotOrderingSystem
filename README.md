@@ -29,6 +29,7 @@ The ordering and vote system looks like the following.
 # Architecture
 
 ## Overview
+[Architecture Overview Entwicklungspraktikum.pdf](https://github.com/user-attachments/files/23195964/Architecture.Overview.Entwicklungspraktikum.pdf)
 
 
 ## Hardware components
